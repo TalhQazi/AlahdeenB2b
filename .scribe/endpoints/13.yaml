@@ -1,0 +1,1131 @@
+name: Warehouse
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/warehouse
+    metadata:
+      title: 'List/Search Warehouses'
+      description: 'Display a listing of the resource.'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters:
+      'search_params[city]':
+        name: 'search_params[city]'
+        description: 'Search by city'
+        required: false
+        example: Lahore
+        type: string
+      'search_params[locality]':
+        name: 'search_params[locality]'
+        description: 'Search by locality'
+        required: false
+        example: 'Garden Town'
+        type: string
+      'search_params[property_type]':
+        name: 'search_params[property_type]'
+        description: 'Search by property_type'
+        required: false
+        example: Sheltered
+        type: string
+      'search_params[min_area]':
+        name: 'search_params[min_area]'
+        description: 'Search by min area'
+        required: false
+        example: !!float 1200
+        type: number
+      'search_params[max_area]':
+        name: 'search_params[max_area]'
+        description: 'Search by max area'
+        required: false
+        example: !!float 2500
+        type: number
+      'search_params[min_price]':
+        name: 'search_params[min_price]'
+        description: 'Search by min price'
+        required: false
+        example: !!float 12000
+        type: number
+      'search_params[max_price]':
+        name: 'search_params[max_price]'
+        description: 'Search by max price'
+        required: false
+        example: !!float 20000
+        type: number
+      'search_params[can_be_shared]':
+        name: 'search_params[can_be_shared]'
+        description: 'Search by can be shared'
+        required: false
+        example: true
+        type: boolean
+      'search_params[is_verified]':
+        name: 'search_params[is_verified]'
+        description: 'Search by is verified'
+        required: false
+        example: true
+        type: boolean
+      per_page:
+        name: per_page
+        description: 'No of warehouses to be fetched per page, default is set to 10'
+        required: false
+        example: 13
+        type: integer
+      'load[]':
+        name: 'load[]'
+        description: 'Name of the relation that needs to be loaded. E.g load[features], load[owner], load[owner.business], load[images].'
+        required: false
+        example: pariatur
+        type: string
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"Success","message":null,"data":{"warehouse":[{"id":192,"property_type":{"id":3,"title":"Apartment","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":29,"lng":72,"area":2962,"price":1321520,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":193,"property_type":{"id":1,"title":"Sheltered","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":27,"lng":65,"area":4855,"price":1181782,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":194,"property_type":{"id":2,"title":"Shop","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":31,"lng":65,"area":3597,"price":2294533,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":195,"property_type":{"id":5,"title":"Single Storey","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":33,"lng":63,"area":3688,"price":1676013,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":196,"property_type":{"id":4,"title":"Plaza","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":32,"lng":72,"area":3823,"price":2125968,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":197,"property_type":{"id":2,"title":"Shop","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":34,"lng":63,"area":4369,"price":1615931,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":198,"property_type":{"id":5,"title":"Single Storey","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":35,"lng":72,"area":3837,"price":2631522,"can_be_shared":1,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":199,"property_type":{"id":2,"title":"Shop","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":34,"lng":68,"area":4904,"price":2441915,"can_be_shared":1,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":200,"property_type":{"id":3,"title":"Apartment","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":24,"lng":69,"area":3027,"price":2196150,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":201,"property_type":{"id":3,"title":"Apartment","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":24,"lng":71,"area":4080,"price":2363909,"can_be_shared":1,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":203,"property_type":{"id":1,"title":"Sheltered","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":74.3125414,"lng":31.5048995,"area":40000,"price":100000,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-08-28 6:02 pm"}],"paginator":{"current_page":1,"data":[{"id":192,"property_type":{"id":3,"title":"Apartment","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":29,"lng":72,"area":2962,"price":1321520,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":193,"property_type":{"id":1,"title":"Sheltered","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":27,"lng":65,"area":4855,"price":1181782,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":194,"property_type":{"id":2,"title":"Shop","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":31,"lng":65,"area":3597,"price":2294533,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":195,"property_type":{"id":5,"title":"Single Storey","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":33,"lng":63,"area":3688,"price":1676013,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":196,"property_type":{"id":4,"title":"Plaza","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":32,"lng":72,"area":3823,"price":2125968,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":197,"property_type":{"id":2,"title":"Shop","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":34,"lng":63,"area":4369,"price":1615931,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":198,"property_type":{"id":5,"title":"Single Storey","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":35,"lng":72,"area":3837,"price":2631522,"can_be_shared":1,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":199,"property_type":{"id":2,"title":"Shop","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":34,"lng":68,"area":4904,"price":2441915,"can_be_shared":1,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":200,"property_type":{"id":3,"title":"Apartment","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":24,"lng":69,"area":3027,"price":2196150,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":201,"property_type":{"id":3,"title":"Apartment","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":24,"lng":71,"area":4080,"price":2363909,"can_be_shared":1,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-07-01 12:34 pm"},{"id":203,"property_type":{"id":1,"title":"Sheltered","created_at":"2021-06-15T12:55:19.000000Z","updated_at":"2021-06-15T12:55:19.000000Z","deleted_at":null},"lat":74.3125414,"lng":31.5048995,"area":40000,"price":100000,"can_be_shared":0,"is_approved":1,"is_active":1,"deleted_at":null,"created_at":"2021-08-28 6:02 pm"}],"first_page_url":"http:\/\/localhost:8000\/api\/warehouse?search_params%5Bcity%5D=Lahore&search_params%5Blocality%5D=Garden%20Town&search_params%5Bproperty_type%5D=Sheltered&search_params%5Bmin_area%5D=1200&search_params%5Bmax_area%5D=2500&search_params%5Bmin_price%5D=12000&search_params%5Bmax_price%5D=20000&search_params%5Bcan_be_shared%5D=1&search_params%5Bis_verified%5D=1&per_page=13&load%5B%5D=pariatur&page=1","from":1,"last_page":1,"last_page_url":"http:\/\/localhost:8000\/api\/warehouse?search_params%5Bcity%5D=Lahore&search_params%5Blocality%5D=Garden%20Town&search_params%5Bproperty_type%5D=Sheltered&search_params%5Bmin_area%5D=1200&search_params%5Bmax_area%5D=2500&search_params%5Bmin_price%5D=12000&search_params%5Bmax_price%5D=20000&search_params%5Bcan_be_shared%5D=1&search_params%5Bis_verified%5D=1&per_page=13&load%5B%5D=pariatur&page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/warehouse?search_params%5Bcity%5D=Lahore&search_params%5Blocality%5D=Garden%20Town&search_params%5Bproperty_type%5D=Sheltered&search_params%5Bmin_area%5D=1200&search_params%5Bmax_area%5D=2500&search_params%5Bmin_price%5D=12000&search_params%5Bmax_price%5D=20000&search_params%5Bcan_be_shared%5D=1&search_params%5Bis_verified%5D=1&per_page=13&load%5B%5D=pariatur&page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"http:\/\/localhost:8000\/api\/warehouse","per_page":13,"prev_page_url":null,"to":11,"total":11}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '18'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/warehouse/popular
+    metadata:
+      title: 'Popular Warehouses'
+      description: 'Display the popular warehouses based on no of views.'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"Success","message":null,"data":{"warehouses":[]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '17'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/warehouse/{warehouse}'
+    metadata:
+      title: 'Warehouse Details'
+      description: 'Display the specified warehouse and records view stats.'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      warehouse:
+        name: warehouse
+        description: ''
+        required: true
+        example: 9
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 404
+        content: |-
+          {
+              "message": "No query results for model [App\\Models\\Warehouse\\Warehouse] 9",
+              "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
+              "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
+              "line": 381,
+              "trace": [
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
+                      "line": 330,
+                      "function": "prepareException",
+                      "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/app/Exceptions/Handler.php",
+                      "line": 62,
+                      "function": "render",
+                      "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php",
+                      "line": 54,
+                      "function": "render",
+                      "class": "App\\Exceptions\\Handler",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
+                      "line": 51,
+                      "function": "render",
+                      "class": "NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 172,
+                      "function": "handleException",
+                      "class": "Illuminate\\Routing\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 127,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 103,
+                      "function": "handleRequest",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 55,
+                      "function": "handleRequestUsingNamedLimiter",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                      "line": 33,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 128,
+                      "function": "Laravel\\Sanctum\\Http\\Middleware\\{closure}",
+                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 103,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                      "line": 34,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 103,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 697,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 672,
+                      "function": "runRouteWithinStack",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 636,
+                      "function": "runRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 625,
+                      "function": "dispatchToRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 166,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 128,
+                      "function": "Illuminate\\Foundation\\Http\\{closure}",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php",
+                      "line": 60,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Barryvdh\\Debugbar\\Middleware\\InjectDebugbar",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+                      "line": 31,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+                      "line": 40,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
+                      "line": 27,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+                      "line": 86,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/fruitcake/laravel-cors/src/HandleCors.php",
+                      "line": 57,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Fruitcake\\Cors\\HandleCors",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/fideloper/proxy/src/TrustProxies.php",
+                      "line": 57,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Fideloper\\Proxy\\TrustProxies",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 103,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 141,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 110,
+                      "function": "sendRequestThroughRouter",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 299,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 287,
+                      "function": "callLaravelOrLumenRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 89,
+                      "function": "makeApiCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 45,
+                      "function": "makeResponseCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 35,
+                      "function": "makeResponseCallIfConditionsPass",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 222,
+                      "function": "__invoke",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 179,
+                      "function": "iterateThroughStrategies",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 116,
+                      "function": "fetchResponses",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 117,
+                      "function": "processRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 75,
+                      "function": "extractEndpointsInfoFromLaravelApp",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 51,
+                      "function": "extractEndpointsInfoAndWriteToDisk",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php",
+                      "line": 48,
+                      "function": "get",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 36,
+                      "function": "handle",
+                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Container/Util.php",
+                      "line": 40,
+                      "function": "Illuminate\\Container\\{closure}",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 93,
+                      "function": "unwrapIfClosure",
+                      "class": "Illuminate\\Container\\Util",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 37,
+                      "function": "callBoundMethod",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+                      "line": 611,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 136,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\Container",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/symfony/console/Command/Command.php",
+                      "line": 256,
+                      "function": "execute",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 121,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Command\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/symfony/console/Application.php",
+                      "line": 971,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/symfony/console/Application.php",
+                      "line": 290,
+                      "function": "doRunCommand",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/symfony/console/Application.php",
+                      "line": 166,
+                      "function": "doRun",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Console/Application.php",
+                      "line": 92,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
+                      "line": 129,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/artisan",
+                      "line": 37,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Console\\Kernel",
+                      "type": "->"
+                  }
+              ]
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '16'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/warehouse/related/{warehouse}'
+    metadata:
+      title: 'Related Warehouses'
+      description: 'List of warehouses with similar property type of the warehouse provided but beloning to other warehouse owners'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      warehouse:
+        name: warehouse
+        description: ''
+        required: true
+        example: 8
+        type: integer
+    queryParameters:
+      limit:
+        name: limit
+        description: 'Specify the no of related warehouses required, default is set to 6.'
+        required: false
+        example: 3
+        type: integer
+    bodyParameters: []
+    responses:
+      -
+        status: 404
+        content: |-
+          {
+              "message": "No query results for model [App\\Models\\Warehouse\\Warehouse] 8",
+              "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
+              "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
+              "line": 381,
+              "trace": [
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
+                      "line": 330,
+                      "function": "prepareException",
+                      "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/app/Exceptions/Handler.php",
+                      "line": 62,
+                      "function": "render",
+                      "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php",
+                      "line": 54,
+                      "function": "render",
+                      "class": "App\\Exceptions\\Handler",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
+                      "line": 51,
+                      "function": "render",
+                      "class": "NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 172,
+                      "function": "handleException",
+                      "class": "Illuminate\\Routing\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 127,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 103,
+                      "function": "handleRequest",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 55,
+                      "function": "handleRequestUsingNamedLimiter",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                      "line": 33,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 128,
+                      "function": "Laravel\\Sanctum\\Http\\Middleware\\{closure}",
+                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 103,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                      "line": 34,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 103,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 697,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 672,
+                      "function": "runRouteWithinStack",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 636,
+                      "function": "runRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 625,
+                      "function": "dispatchToRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 166,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 128,
+                      "function": "Illuminate\\Foundation\\Http\\{closure}",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php",
+                      "line": 60,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Barryvdh\\Debugbar\\Middleware\\InjectDebugbar",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+                      "line": 31,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+                      "line": 40,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
+                      "line": 27,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+                      "line": 86,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/fruitcake/laravel-cors/src/HandleCors.php",
+                      "line": 57,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Fruitcake\\Cors\\HandleCors",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/fideloper/proxy/src/TrustProxies.php",
+                      "line": 57,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Fideloper\\Proxy\\TrustProxies",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 103,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 141,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 110,
+                      "function": "sendRequestThroughRouter",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 299,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 287,
+                      "function": "callLaravelOrLumenRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 89,
+                      "function": "makeApiCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 45,
+                      "function": "makeResponseCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 35,
+                      "function": "makeResponseCallIfConditionsPass",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 222,
+                      "function": "__invoke",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 179,
+                      "function": "iterateThroughStrategies",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 116,
+                      "function": "fetchResponses",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 117,
+                      "function": "processRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 75,
+                      "function": "extractEndpointsInfoFromLaravelApp",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 51,
+                      "function": "extractEndpointsInfoAndWriteToDisk",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php",
+                      "line": 48,
+                      "function": "get",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 36,
+                      "function": "handle",
+                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Container/Util.php",
+                      "line": 40,
+                      "function": "Illuminate\\Container\\{closure}",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 93,
+                      "function": "unwrapIfClosure",
+                      "class": "Illuminate\\Container\\Util",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 37,
+                      "function": "callBoundMethod",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+                      "line": 611,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 136,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\Container",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/symfony/console/Command/Command.php",
+                      "line": 256,
+                      "function": "execute",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 121,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Command\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/symfony/console/Application.php",
+                      "line": 971,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/symfony/console/Application.php",
+                      "line": 290,
+                      "function": "doRunCommand",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/symfony/console/Application.php",
+                      "line": 166,
+                      "function": "doRun",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Console/Application.php",
+                      "line": 92,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
+                      "line": 129,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/ahad/emandii/artisan",
+                      "line": 37,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Console\\Kernel",
+                      "type": "->"
+                  }
+              ]
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '15'
+          vary: Origin
+        description: null
+    responseFields: []

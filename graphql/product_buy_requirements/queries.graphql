@@ -1,0 +1,16 @@
+extend type Query {
+    product_buy_requirements: [ProductBuyRequirement!]! @paginate(defaultCount: 10) @guard
+}
+
+type ProductBuyRequirement {
+    id: ID!
+    user_id: Int!
+    required_product: String!
+    requirement_details: String!
+    quantity: String!
+    unit: String!
+    budget: Float!
+    requirement_urgency: String!
+    requirement_frequency: String!
+    supplier_location: String!
+}

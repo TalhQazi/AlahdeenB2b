@@ -1,0 +1,37 @@
+extend type Query {
+    warehousebookings: [WarehouseBooking!]! @paginate(defaultCount: 10) @guard
+}
+
+extend type Mutation {
+    storeWarehouseBooking(input: WarehouseBookingInput! @spread): WarehouseBooking
+    @field(resolver: "WarehouseBookingMutator@create")
+}
+
+input WarehouseBookingInput @validator{
+    warehouse_id: Int
+    item: String!
+    description: String!
+    booked_by: Int!
+    start_time: String!
+    end_time: String!
+    booking_status: String!
+    quantity: String
+    unit: String
+    type: String
+    area: String
+    goods_value: String
+}
+
+type WarehouseBooking {
+    id: ID!
+    warehouse_id: Int!
+    item: String!
+    description: String!
+    booked_by: Int!
+    start_time: DateTime!
+    end_time: DateTime !
+    booking_status: String!
+    quantity: String!
+    unit: String!
+}
+

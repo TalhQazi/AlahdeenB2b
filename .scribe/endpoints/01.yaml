@@ -1,0 +1,163 @@
+name: Category
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/category
+    metadata:
+      title: 'Search Categories'
+      description: 'Search categories,'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters:
+      title:
+        name: title
+        description: 'Search by title, and load its related products if needed'
+        required: false
+        example: Men
+        type: string
+      'load[products]':
+        name: 'load[products]'
+        description: ''
+        required: false
+        example: 1
+        type: integer
+      parent_cat_id:
+        name: parent_cat_id
+        description: 'Search by parent category id'
+        required: false
+        example: null
+        type: integer
+      level:
+        name: level
+        description: 'Search by Level'
+        required: false
+        example: null
+        type: integer
+      cat_id:
+        name: cat_id
+        description: 'String Search by Category Id'
+        required: false
+        example: null
+        type: integer
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"Success","message":null,"data":{"products":[],"categories":[{"id":2,"title":"Medical Equipments","image_path":"\/storage\/category\/images\/nWdEiFceW441ohd1p9sduIN4CYZOk8Rq5ERyuNsT.jpg","level":1,"bread_crumb":null,"created_at":"2021-06-02 10:55 am","deleted_at":null},{"id":8,"title":"Men Clothes","image_path":"\/storage\/category\/images\/OZqTixQOodyBjf9uI7wIRCr2tX0c5NiLGCg7MLwe.jpg","level":2,"bread_crumb":";7;","created_at":"2021-06-02 11:31 am","deleted_at":null}],"category_paginator":{"current_page":1,"data":[{"id":2,"title":"Medical Equipments","image_path":"\/storage\/category\/images\/nWdEiFceW441ohd1p9sduIN4CYZOk8Rq5ERyuNsT.jpg","level":1,"bread_crumb":null,"created_at":"2021-06-02 10:55 am","deleted_at":null},{"id":8,"title":"Men Clothes","image_path":"\/storage\/category\/images\/OZqTixQOodyBjf9uI7wIRCr2tX0c5NiLGCg7MLwe.jpg","level":2,"bread_crumb":";7;","created_at":"2021-06-02 11:31 am","deleted_at":null}],"first_page_url":"http:\/\/localhost:8000\/api\/category?title=Men&load%5Bproducts%5D=1&page=1","from":1,"last_page":1,"last_page_url":"http:\/\/localhost:8000\/api\/category?title=Men&load%5Bproducts%5D=1&page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/category?title=Men&load%5Bproducts%5D=1&page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"http:\/\/localhost:8000\/api\/category","per_page":20,"prev_page_url":null,"to":2,"total":2},"product_paginator":[]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '34'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/category/trending
+    metadata:
+      title: 'Trending Categories'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters:
+      limit:
+        name: limit
+        description: |-
+          The number of categories required, if not provided default is set to 5
+          Display the trending resources based on no of views.
+        required: false
+        example: 19
+        type: integer
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"Success","message":null,"data":{"categories":[{"id":2,"title":"Medical Equipments","image_path":"\/storage\/category\/images\/nWdEiFceW441ohd1p9sduIN4CYZOk8Rq5ERyuNsT.jpg","level":1,"bread_crumb":null,"sub_categories":{"data":[{"id":5,"title":"Masks","image_path":"\/storage\/category\/images\/KMnQxW91bxwQUYLOSWHjfuSqK9423eqQoKBDKf0y.jpg","level":1,"bread_crumb":null,"created_at":"2021-06-02 11:21 am","deleted_at":null}]},"created_at":"2021-06-02 10:55 am","deleted_at":null},{"id":8,"title":"Men Clothes","image_path":"\/storage\/category\/images\/OZqTixQOodyBjf9uI7wIRCr2tX0c5NiLGCg7MLwe.jpg","level":2,"bread_crumb":";7;","sub_categories":{"data":[{"id":10,"title":"Shirts","image_path":"\/storage\/category\/images\/AWgqXcf9RVnWm1axp8yItG4yB15i7WNXO5liE0lB.jpg","level":3,"bread_crumb":";7;8;","created_at":"2021-08-12 6:50 pm","deleted_at":null},{"id":11,"title":"Trousers","image_path":"\/storage\/category\/images\/DN3A5TLTuCs2MyNctBBmva01tPci45biBnbVpfBe.jpg","level":3,"bread_crumb":";7;8;","created_at":"2021-08-12 6:53 pm","deleted_at":null}]},"created_at":"2021-06-02 11:31 am","deleted_at":null},{"id":1,"title":"Electronics","image_path":"\/storage\/category\/images\/lDKFminDbOxdMTEJleqSNaRkuIvjQARDJVu7FIRC.jpg","level":1,"bread_crumb":null,"sub_categories":{"data":[{"id":3,"title":"Computers","image_path":"\/storage\/category\/images\/If0xelTk30an0yGQc9FgeIF9Oo0jvqjDkF7DOLXm.jpg","level":2,"bread_crumb":";1;","created_at":"2021-06-02 10:55 am","deleted_at":null},{"id":4,"title":"Mobiles","image_path":"\/storage\/category\/images\/hyh6eSI0I7PwA0OpKO7nhoE3bxAHdwGOQmo5RnpL.jpg","level":2,"bread_crumb":";1;","created_at":"2021-06-02 10:55 am","deleted_at":null}]},"created_at":"2021-06-02 10:55 am","deleted_at":null},{"id":3,"title":"Computers","image_path":"\/storage\/category\/images\/If0xelTk30an0yGQc9FgeIF9Oo0jvqjDkF7DOLXm.jpg","level":2,"bread_crumb":";1;","sub_categories":{"data":[{"id":6,"title":"Laptops","image_path":"\/storage\/category\/images\/L95Ph4LDGpaxJiDqjSSDlFQmZ2dQx3MawYuMU6wS.jpg","level":3,"bread_crumb":";1;3;","created_at":"2021-06-02 11:21 am","deleted_at":null},{"id":9,"title":"Computer Accessories","image_path":"\/storage\/category\/images\/Oe8igO982SurEblB5hqirX0aPM3Eo1Vnm7PWgMGH.jpg","level":3,"bread_crumb":";1;3;","created_at":"2021-07-19 4:30 pm","deleted_at":null}]},"created_at":"2021-06-02 10:55 am","deleted_at":null},{"id":4,"title":"Mobiles","image_path":"\/storage\/category\/images\/hyh6eSI0I7PwA0OpKO7nhoE3bxAHdwGOQmo5RnpL.jpg","level":2,"bread_crumb":";1;","sub_categories":{"data":[{"id":12,"title":"Smart Phones","image_path":"\/storage\/category\/images\/EeHO0NLVbkef1WlSCXrDkfCyobfehmhTooFUs8nS.jpg","level":3,"bread_crumb":";1;4;","created_at":"2021-08-13 3:56 pm","deleted_at":null}]},"created_at":"2021-06-02 10:55 am","deleted_at":null},{"id":7,"title":"Apparel","image_path":"\/storage\/category\/images\/pHemwMZ8htnv399VMkeTDcdcCwR2zdj3fh5zWVBz.jpg","level":1,"bread_crumb":null,"sub_categories":{"data":[{"id":8,"title":"Men Clothes","image_path":"\/storage\/category\/images\/OZqTixQOodyBjf9uI7wIRCr2tX0c5NiLGCg7MLwe.jpg","level":2,"bread_crumb":";7;","created_at":"2021-06-02 11:31 am","deleted_at":null}]},"created_at":"2021-06-02 11:25 am","deleted_at":null}]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '33'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/category/{id}/products'
+    metadata:
+      title: 'Get Specific Category Products'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 7
+        type: integer
+    queryParameters:
+      per_page:
+        name: per_page
+        description: 'The number of records required per page, set to 20 by default'
+        required: false
+        example: 19
+        type: integer
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"Success","message":null,"data":{"products":[{"id":2,"title":"Polo Shirts","price":"1000.00","description":"<p>100% pure cotton shirts<\/p>","category_id":10,"company_details":{"id":1,"company_name":"Madray Millat","address":"230 Bilal Street, Ahmed Block","locality":"Garden Town","city":"Lahore","year_of_establishment":2020,"website":null,"user_id":3,"details":{"company_logo":"\/storage\/business\/logo\/images\/Nuw3rRSwrW8hFIWEy1g9I7AFYW8ZiGvzyeYfwDiS.png","description":null}},"deleted_at":null,"created_at":"2021-06-02 11:27 am","images":{"data":[{"id":4,"path":"\/storage\/product\/images\/dpO76dXJIM98Sx3c6H1SDWGryCu4C8JKHyXhQDDx.jpg","is_main":1}]},"is_featured":0,"has_promotion":true},{"id":3,"title":"Denim Jeans","price":"2000.00","description":"<p>100% Geninune Denim Jeans<\/p>","category_id":11,"company_details":{"id":1,"company_name":"Madray Millat","address":"230 Bilal Street, Ahmed Block","locality":"Garden Town","city":"Lahore","year_of_establishment":2020,"website":null,"user_id":3,"details":{"company_logo":"\/storage\/business\/logo\/images\/Nuw3rRSwrW8hFIWEy1g9I7AFYW8ZiGvzyeYfwDiS.png","description":null}},"deleted_at":null,"created_at":"2021-06-02 11:35 am","images":{"data":[{"id":5,"path":"\/storage\/product\/images\/Yl78CYKN4LHNJvTIYV1XDni3Aus5tAkdsz2RbJwH.jpg","is_main":1}]},"is_featured":0,"has_promotion":false},{"id":12,"title":"Chino","price":"2000.00","description":null,"category_id":11,"company_details":{"id":1,"company_name":"Madray Millat","address":"230 Bilal Street, Ahmed Block","locality":"Garden Town","city":"Lahore","year_of_establishment":2020,"website":null,"user_id":3,"details":{"company_logo":"\/storage\/business\/logo\/images\/Nuw3rRSwrW8hFIWEy1g9I7AFYW8ZiGvzyeYfwDiS.png","description":null}},"deleted_at":null,"created_at":"2021-08-13 2:31 pm","images":{"data":[{"id":16,"path":"\/storage\/product\/images\/5kDG8MtvMxComxbPB4xpmH8cw4mSKiYrlbCGTRdw.jpg","is_main":1}]},"is_featured":0,"has_promotion":false}],"paginator":{"current_page":1,"data":[{"id":2,"title":"Polo Shirts","price":"1000.00","description":"<p>100% pure cotton shirts<\/p>","category_id":10,"company_details":{"id":1,"company_name":"Madray Millat","address":"230 Bilal Street, Ahmed Block","locality":"Garden Town","city":"Lahore","year_of_establishment":2020,"website":null,"user_id":3,"details":{"company_logo":"\/storage\/business\/logo\/images\/Nuw3rRSwrW8hFIWEy1g9I7AFYW8ZiGvzyeYfwDiS.png","description":null}},"deleted_at":null,"created_at":"2021-06-02 11:27 am","images":{"data":[{"id":4,"path":"\/storage\/product\/images\/dpO76dXJIM98Sx3c6H1SDWGryCu4C8JKHyXhQDDx.jpg","is_main":1}]},"is_featured":0,"has_promotion":true},{"id":3,"title":"Denim Jeans","price":"2000.00","description":"<p>100% Geninune Denim Jeans<\/p>","category_id":11,"company_details":{"id":1,"company_name":"Madray Millat","address":"230 Bilal Street, Ahmed Block","locality":"Garden Town","city":"Lahore","year_of_establishment":2020,"website":null,"user_id":3,"details":{"company_logo":"\/storage\/business\/logo\/images\/Nuw3rRSwrW8hFIWEy1g9I7AFYW8ZiGvzyeYfwDiS.png","description":null}},"deleted_at":null,"created_at":"2021-06-02 11:35 am","images":{"data":[{"id":5,"path":"\/storage\/product\/images\/Yl78CYKN4LHNJvTIYV1XDni3Aus5tAkdsz2RbJwH.jpg","is_main":1}]},"is_featured":0,"has_promotion":false},{"id":12,"title":"Chino","price":"2000.00","description":null,"category_id":11,"company_details":{"id":1,"company_name":"Madray Millat","address":"230 Bilal Street, Ahmed Block","locality":"Garden Town","city":"Lahore","year_of_establishment":2020,"website":null,"user_id":3,"details":{"company_logo":"\/storage\/business\/logo\/images\/Nuw3rRSwrW8hFIWEy1g9I7AFYW8ZiGvzyeYfwDiS.png","description":null}},"deleted_at":null,"created_at":"2021-08-13 2:31 pm","images":{"data":[{"id":16,"path":"\/storage\/product\/images\/5kDG8MtvMxComxbPB4xpmH8cw4mSKiYrlbCGTRdw.jpg","is_main":1}]},"is_featured":0,"has_promotion":false}],"first_page_url":"http:\/\/localhost:8000\/api\/category\/7\/products?per_page=19&page=1","from":1,"last_page":1,"last_page_url":"http:\/\/localhost:8000\/api\/category\/7\/products?per_page=19&page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/category\/7\/products?per_page=19&page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"http:\/\/localhost:8000\/api\/category\/7\/products","per_page":19,"prev_page_url":null,"to":3,"total":3}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '32'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/category/{category}'
+    metadata:
+      title: 'Get Specific Category'
+      description: 'Display the specified resource.'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      category:
+        name: category
+        description: ''
+        required: true
+        example: 7
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"Success","message":null,"data":{"category":{"id":7,"title":"Apparel","image_path":"\/storage\/category\/images\/pHemwMZ8htnv399VMkeTDcdcCwR2zdj3fh5zWVBz.jpg","level":1,"bread_crumb":[],"sub_categories":{"data":[{"id":8,"title":"Men Clothes","image_path":"\/storage\/category\/images\/OZqTixQOodyBjf9uI7wIRCr2tX0c5NiLGCg7MLwe.jpg","level":2,"bread_crumb":";7;","created_at":"2021-06-02 11:31 am","deleted_at":null}]},"created_at":"2021-06-02 11:25 am","deleted_at":null}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '31'
+          vary: Origin
+        description: null
+    responseFields: []

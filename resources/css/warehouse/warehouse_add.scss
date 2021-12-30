@@ -1,0 +1,49 @@
+@import '../auto_complete.css';
+@import '../common/validation_error.scss';
+
+.step-div {
+    --text-opacity: 1;
+    color: #a0aec0;
+    color: rgba(160, 174, 192, var(--text-opacity));
+
+    .rounded-div {
+        --border-opacity: 1;
+        border-color: #e2e8f0;
+        border-color: rgba(226, 232, 240, var(--border-opacity));
+    }
+
+    .tab-text {
+        --text-opacity: 1;
+        color: #a0aec0;
+        color: rgba(160, 174, 192, var(--text-opacity));
+    }
+}
+
+.step-div.active {
+    color: white;
+
+    .rounded-div {
+        --border-opacity: 1;
+        border-color: #319795;
+        border-color: rgba(49, 151, 149, var(--border-opacity));
+        --bg-opacity: 1;
+        background-color: #319795;
+        background-color: rgba(49, 151, 149, var(--bg-opacity));
+    }
+
+    .tab-text {
+        --text-opacity: 1;
+        color: #319795;
+        color: rgba(49, 151, 149, var(--text-opacity));
+    }
+}
+
+.active-transition {
+    --border-opacity: 1;
+    border-color: #319795;
+    border-color: rgba(49, 151, 149, var(--border-opacity));
+}
+
+
+
+

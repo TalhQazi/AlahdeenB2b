@@ -1,0 +1,12 @@
+$flagsImagePath: '../../images/intl-tel-input/';
+@import '~intl-tel-input/src/css/intlTelInput';
+
+.iti {
+    width: 100%;
+}
+
+form {
+    label.error {
+        color: red;
+    }
+}

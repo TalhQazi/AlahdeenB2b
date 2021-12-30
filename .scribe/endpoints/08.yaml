@@ -1,0 +1,65 @@
+name: Password
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/forgot-password
+    metadata:
+      title: 'Forgot Password'
+      description: 'Send a reset link to the given user.'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: ''
+        required: true
+        example: test@gmail.com
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/reset-password
+    metadata:
+      title: 'Reset Password'
+      description: 'Reset the user''s password.'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      token:
+        name: token
+        description: ''
+        required: true
+        example: dbc1014e169348ed2cd7d26569641010b3c5c8412caf3fa2cd32fbcfc002c1ae
+        type: string
+      email:
+        name: email
+        description: ''
+        required: true
+        example: test@gmail.com
+        type: string
+      password:
+        name: password
+        description: 'Password should be atleast 8 characters long'
+        required: true
+        example: '12345678'
+        type: string
+      password_confirmation:
+        name: password_confirmation
+        description: 'Password should be atleast 8 characters long'
+        required: true
+        example: '12345678'
+        type: string
+    responses: []
+    responseFields: []

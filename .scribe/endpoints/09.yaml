@@ -1,0 +1,215 @@
+name: Products
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/products
+    metadata:
+      title: 'Search Products'
+      description: 'Search products based on filters. Load array is used for fetched relation data'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters:
+      'search_params[title]':
+        name: 'search_params[title]'
+        description: 'Parameter to search on title'
+        required: false
+        example: Polo
+        type: string
+      'search_params[keywords]':
+        name: 'search_params[keywords]'
+        description: 'Parameter to search on features'
+        required: false
+        example: Cotton
+        type: string
+      'search_params[min_price]':
+        name: 'search_params[min_price]'
+        description: ''
+        required: false
+        example: 10
+        type: integer
+      'search_params[max_price]':
+        name: 'search_params[max_price]'
+        description: ''
+        required: false
+        example: 10000
+        type: integer
+      'search_params[business_type]':
+        name: 'search_params[business_type]'
+        description: ''
+        required: false
+        example: 11
+        type: integer
+      'search_params[company_id]':
+        name: 'search_params[company_id]'
+        description: ''
+        required: false
+        example: 1
+        type: integer
+      'load[productCategory]':
+        name: 'load[productCategory]'
+        description: 'Parameter to load product category, parameter value won''t have affect on out come of api.'
+        required: false
+        example: true
+        type: boolean
+      'load[user]':
+        name: 'load[user]'
+        description: 'Parameter to load product seller, parameter value won''t have affect on out come of api.'
+        required: false
+        example: true
+        type: boolean
+      'load[details]':
+        name: 'load[details]'
+        description: 'Parameter to load product features, parameter value won''t have affect on out come of api.'
+        required: false
+        example: true
+        type: boolean
+      'load[images]':
+        name: 'load[images]'
+        description: 'Parameter to load product images, parameter value won''t have affect on out come of api.'
+        required: false
+        example: true
+        type: boolean
+      'load[videos]':
+        name: 'load[videos]'
+        description: 'Parameter to load product videos, parameter value won''t have affect on out come of api.'
+        required: false
+        example: true
+        type: boolean
+      'load[documents]':
+        name: 'load[documents]'
+        description: 'Parameter to load product documents, parameter value won''t have affect on out come of api.'
+        required: false
+        example: true
+        type: boolean
+      'load[company]':
+        name: 'load[company]'
+        description: 'Parameter to load product seller company, parameter value won''t have affect on out come of api.'
+        required: false
+        example: true
+        type: boolean
+      per_page:
+        name: per_page
+        description: 'No of products to be fetched, default is set to 20'
+        required: false
+        example: 5
+        type: integer
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"Success","message":null,"data":{"products":[{"id":8,"title":"Sony Xperia X3","price":"25000.00","description":"<p>Sony Xperia experience the change<\/p>","category_id":12,"deleted_at":null,"created_at":"2021-07-19 1:26 pm","is_featured":1,"has_promotion":false},{"id":9,"title":"HP Gaming Mouse","price":"2000.00","description":null,"category_id":9,"deleted_at":null,"created_at":"2021-07-19 5:12 pm","is_featured":1,"has_promotion":false},{"id":1,"title":"Dell Inspirion N5995","price":"130000.00","description":"<p>10th Generation i5<\/p>","category_id":6,"deleted_at":null,"created_at":"2021-06-02 11:22 am","is_featured":0,"has_promotion":false},{"id":2,"title":"Polo Shirts","price":"1000.00","description":"<p>100% pure cotton shirts<\/p>","category_id":10,"deleted_at":null,"created_at":"2021-06-02 11:27 am","is_featured":0,"has_promotion":true},{"id":3,"title":"Denim Jeans","price":"2000.00","description":"<p>100% Geninune Denim Jeans<\/p>","category_id":11,"deleted_at":null,"created_at":"2021-06-02 11:35 am","is_featured":0,"has_promotion":false}],"paginator":{"current_page":1,"data":[{"id":8,"title":"Sony Xperia X3","price":"25000.00","description":"<p>Sony Xperia experience the change<\/p>","category_id":12,"deleted_at":null,"created_at":"2021-07-19 1:26 pm","is_featured":1,"has_promotion":false},{"id":9,"title":"HP Gaming Mouse","price":"2000.00","description":null,"category_id":9,"deleted_at":null,"created_at":"2021-07-19 5:12 pm","is_featured":1,"has_promotion":false},{"id":1,"title":"Dell Inspirion N5995","price":"130000.00","description":"<p>10th Generation i5<\/p>","category_id":6,"deleted_at":null,"created_at":"2021-06-02 11:22 am","is_featured":0,"has_promotion":false},{"id":2,"title":"Polo Shirts","price":"1000.00","description":"<p>100% pure cotton shirts<\/p>","category_id":10,"deleted_at":null,"created_at":"2021-06-02 11:27 am","is_featured":0,"has_promotion":true},{"id":3,"title":"Denim Jeans","price":"2000.00","description":"<p>100% Geninune Denim Jeans<\/p>","category_id":11,"deleted_at":null,"created_at":"2021-06-02 11:35 am","is_featured":0,"has_promotion":false}],"first_page_url":"http:\/\/localhost:8000\/api\/products?search_params%5Btitle%5D=Polo&search_params%5Bkeywords%5D=Cotton&search_params%5Bmin_price%5D=10&search_params%5Bmax_price%5D=10000&search_params%5Bbusiness_type%5D=11&search_params%5Bcompany_id%5D=1&load%5BproductCategory%5D=1&load%5Buser%5D=1&load%5Bdetails%5D=1&load%5Bimages%5D=1&load%5Bvideos%5D=1&load%5Bdocuments%5D=1&load%5Bcompany%5D=1&per_page=5&page=1","from":1,"last_page":2,"last_page_url":"http:\/\/localhost:8000\/api\/products?search_params%5Btitle%5D=Polo&search_params%5Bkeywords%5D=Cotton&search_params%5Bmin_price%5D=10&search_params%5Bmax_price%5D=10000&search_params%5Bbusiness_type%5D=11&search_params%5Bcompany_id%5D=1&load%5BproductCategory%5D=1&load%5Buser%5D=1&load%5Bdetails%5D=1&load%5Bimages%5D=1&load%5Bvideos%5D=1&load%5Bdocuments%5D=1&load%5Bcompany%5D=1&per_page=5&page=2","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/products?search_params%5Btitle%5D=Polo&search_params%5Bkeywords%5D=Cotton&search_params%5Bmin_price%5D=10&search_params%5Bmax_price%5D=10000&search_params%5Bbusiness_type%5D=11&search_params%5Bcompany_id%5D=1&load%5BproductCategory%5D=1&load%5Buser%5D=1&load%5Bdetails%5D=1&load%5Bimages%5D=1&load%5Bvideos%5D=1&load%5Bdocuments%5D=1&load%5Bcompany%5D=1&per_page=5&page=1","label":"1","active":true},{"url":"http:\/\/localhost:8000\/api\/products?search_params%5Btitle%5D=Polo&search_params%5Bkeywords%5D=Cotton&search_params%5Bmin_price%5D=10&search_params%5Bmax_price%5D=10000&search_params%5Bbusiness_type%5D=11&search_params%5Bcompany_id%5D=1&load%5BproductCategory%5D=1&load%5Buser%5D=1&load%5Bdetails%5D=1&load%5Bimages%5D=1&load%5Bvideos%5D=1&load%5Bdocuments%5D=1&load%5Bcompany%5D=1&per_page=5&page=2","label":"2","active":false},{"url":"http:\/\/localhost:8000\/api\/products?search_params%5Btitle%5D=Polo&search_params%5Bkeywords%5D=Cotton&search_params%5Bmin_price%5D=10&search_params%5Bmax_price%5D=10000&search_params%5Bbusiness_type%5D=11&search_params%5Bcompany_id%5D=1&load%5BproductCategory%5D=1&load%5Buser%5D=1&load%5Bdetails%5D=1&load%5Bimages%5D=1&load%5Bvideos%5D=1&load%5Bdocuments%5D=1&load%5Bcompany%5D=1&per_page=5&page=2","label":"Next &raquo;","active":false}],"next_page_url":"http:\/\/localhost:8000\/api\/products?search_params%5Btitle%5D=Polo&search_params%5Bkeywords%5D=Cotton&search_params%5Bmin_price%5D=10&search_params%5Bmax_price%5D=10000&search_params%5Bbusiness_type%5D=11&search_params%5Bcompany_id%5D=1&load%5BproductCategory%5D=1&load%5Buser%5D=1&load%5Bdetails%5D=1&load%5Bimages%5D=1&load%5Bvideos%5D=1&load%5Bdocuments%5D=1&load%5Bcompany%5D=1&per_page=5&page=2","path":"http:\/\/localhost:8000\/api\/products","per_page":5,"prev_page_url":null,"to":5,"total":10}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '28'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/products/trending
+    metadata:
+      title: 'Trending Products'
+      description: 'Display the trending resources based on no of views.'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters:
+      limit:
+        name: limit
+        description: 'The number of trending products that need to be fetched, default is set to 5.'
+        required: false
+        example: 3
+        type: integer
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"Success","message":null,"data":{"products":[{"id":3,"title":"Denim Jeans","price":"2000.00","description":"<p>100% Geninune Denim Jeans<\/p>","category_id":11,"deleted_at":null,"created_at":"2021-06-02 11:35 am","images":{"data":[{"id":5,"path":"\/storage\/product\/images\/Yl78CYKN4LHNJvTIYV1XDni3Aus5tAkdsz2RbJwH.jpg","is_main":1}]},"is_featured":0,"has_promotion":false},{"id":2,"title":"Polo Shirts","price":"1000.00","description":"<p>100% pure cotton shirts<\/p>","category_id":10,"deleted_at":null,"created_at":"2021-06-02 11:27 am","images":{"data":[{"id":4,"path":"\/storage\/product\/images\/dpO76dXJIM98Sx3c6H1SDWGryCu4C8JKHyXhQDDx.jpg","is_main":1}]},"is_featured":0,"has_promotion":true},{"id":1,"title":"Dell Inspirion N5995","price":"130000.00","description":"<p>10th Generation i5<\/p>","category_id":6,"deleted_at":null,"created_at":"2021-06-02 11:22 am","images":{"data":[{"id":3,"path":"\/storage\/product\/images\/5PW1L6ujOmShj8DNizjdg3V47E3IBCXrA47CA82B.jpg","is_main":1},{"id":1,"path":"\/storage\/product\/images\/eBbUdIfOzzlf4s2f0BizYaJLcuOcQGfC36qx4SCC.jpg","is_main":0},{"id":2,"path":"\/storage\/product\/images\/oGiUkGFNxEweu49ykPlg6aHaDcgnRXk9RlmWBC9k.jpg","is_main":0}]},"is_featured":0,"has_promotion":false}]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '27'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/products/{product}'
+    metadata:
+      title: 'Product Details'
+      description: 'Display the specified resource'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      product:
+        name: product
+        description: ''
+        required: true
+        example: 7
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"Success","message":null,"data":{"product":{"id":7,"title":"Beats Wireless Headphones","price":"1500.00","description":"<p>Beats Studio 3 Wireless Headphones<\/p>","category_id":9,"company_details":{"id":27,"company_name":"Eco Bio Solutions","address":"Floor # 4, Mega Tower","locality":"Gulberg","city":"Lahore","year_of_establishment":2019,"website":null,"user_id":109,"details":null},"deleted_at":null,"created_at":"2021-07-16 4:30 pm","images":{"data":[{"id":13,"path":"\/storage\/product\/images\/saLbB5KOgfAE7GcBlT7epajrQM9GhNk0nwPg6co5.png","is_main":1}]},"details":{"data":[{"id":9,"key":"Color","value":"Red, Black"}]},"videos":[],"documents":{"data":[]},"is_featured":0,"promotion_offer":null,"has_promotion":false}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '26'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/products/related/{product}'
+    metadata:
+      title: 'Related products'
+      description: 'Get products having same category but belonging to different seller'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      product:
+        name: product
+        description: ''
+        required: true
+        example: 12
+        type: integer
+    queryParameters:
+      limit:
+        name: limit
+        description: 'The number of related products to be fetched, default is set to 6.'
+        required: false
+        example: 3
+        type: integer
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"Success","message":null,"data":{"related_products":[]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '25'
+          vary: Origin
+        description: null
+    responseFields: []

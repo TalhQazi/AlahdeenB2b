@@ -1,0 +1,19 @@
+extend type Mutation {
+    storeProductBuyRequirement(input: ProductBuyRequirementInput! @spread): ProductBuyRequirement
+    @field(resolver: "ProductRequirementMutator@create")
+}
+
+input ProductBuyRequirementInput @validator{
+    user_id: Int!
+    product_id: Int!
+    requirement_details: String!
+    quantity: String!
+    unit: String!
+    budget: Float
+    requirement_urgency: String
+    requirement_frequency: String
+    supplier_location: String
+}
+
+
+
